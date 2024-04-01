@@ -7,9 +7,9 @@
 每個資料夾的名稱會對應到其章節 內容有該章節後Programming Project其中幾題的.cpp檔答案
 - 範例
 -  CH4&CH5_HW/
-  - - HW1.cpp
-  - - HW2.cpp
-  - - HW3.cpp
+  - - Q1.cpp
+  - - Q2.cpp
+  - - Q3.cpp
   
 # 使用環境
 在進行以下的使用方法時 皆會用到git
