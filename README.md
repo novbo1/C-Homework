@@ -1,5 +1,5 @@
 # C++ Homework uploads
-這個專案主要是以Absolute C++ Sixth Edition這本書籍每個章節後的Programming Projects 選出幾題來做之後的解答為主
+這個專案主要是以 <Absolute C++ Sixth Edition> 這本書籍每個章節後的Programming Projects 選出幾題來做之後的解答為主
   
   按照課程的章節結構來組織代碼，每次提交包含一個或多個章節的解答
 
@@ -19,19 +19,22 @@
 
 # 使用方法
 若想要使用這些專題解答 可以使用以下方法
-- git clone 複製檔案
-- cd CHn 進入到章節n的資料夾
-- add 新增功能或檔案
-- fix 修復
-- update 更新文件或功能
-- remove 刪除文件或功能
-  
-# 
-若要上傳到Github 可以使用以下方法
-- git add .
-- git commit -m
-- git push orgin main
-  
+1. **複製檔案**：首先，您需要將專案的代碼複製到您的本地環境中。這可以通過使用`git clone`命令來完成。請在終端中執行以下命令：
+
+        git clone <repository_url>     其中`<repository_url>`是專案在GitHub上的URL。
+2. **進入到相應章節的資料夾**：專案中的每個章節都有一個對應的資料夾，資料夾的名稱對應到相應的章節。為了使用特定章節的解答，請進入到該章節的資料夾。例如，如果您想要使用第4章和第5章的解答，可以執行以下命令：
+
+       cd CH4&CH5_HW
+
+3. **新增、修復、更新或刪除文件**：一旦您進入到了相應章節的資料夾，您可以根據需要進行相應的操作。您可以添加新的功能或檔案、修復存在的問題、更新現有的文件或功能，或者刪除不再需要的文件或功能。請使用`git add`命令將您的更改添加到暫存區，然後使用`git commit`命令提交您的更改。例如：
+
+       git add .
+       git commit -m "Add solutions for chapter 4 and 5 exercises"
+
+4. **將更改推送到GitHub**：一旦您完成了所需的更改並已經提交到本地存儲庫，您可以使用`git push`命令將您的更改推送到GitHub。請確保您有推送到的正確分支（通常是`main`或`master`分支）。例如：
+
+       git push origin main
+
 # 授權
 這個專案使用MIT 授權
 
