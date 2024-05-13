@@ -15,8 +15,8 @@ public:
 	//overloaded functions for ++ and --
 	PrimeNumber operator++();    //prefix
 	PrimeNumber operator--();
-	//PrimeNumber operator++(int); //postfix
-	//PrimeNumber operator--(int);
+	PrimeNumber operator++(int); //postfix
+	PrimeNumber operator--(int);
 
 private:
 	int number;
@@ -27,19 +27,26 @@ int main()
 	PrimeNumber test1(13);
 	++test1;
 	cout << test1.getPrimeNumber() << endl;
+	test1++;
+	cout << test1.getPrimeNumber() << endl;
+	--test1;
+	cout << test1.getPrimeNumber() << endl;
+	test1--;
+	cout << test1.getPrimeNumber() << endl;
 	return 0;
 }
 
 PrimeNumber PrimeNumber::operator++()
 {
-	int nextPrime = 0;
-	bool result = true;
+	int nextPrime = number + 1;
+	bool isPrime = false;
 
-	for (int i = number; i < number + 10; i++)
+	while (!isPrime)
 	{
-		for (int j = 2; j < i-1; j++)
+		bool result = true;
+		for (int j = 2; j < nextPrime; j++)
 		{
-			if (i % j == 0)
+			if (nextPrime % j == 0)
 			{
 				result = false;
 				break;
@@ -47,79 +54,100 @@ PrimeNumber PrimeNumber::operator++()
 		}
 		if (result)
 		{
-			nextPrime = i;
+			isPrime = true;
+			break; // Found the next prime, exit the loop
 		}
-		result = true;
+		nextPrime++; // Move to the next number
 	}
+
 	number = nextPrime;
 	return PrimeNumber(nextPrime);
 }
 
 PrimeNumber PrimeNumber::operator--()
 {
-	int lastPrime;
-
 	if (number == 1)
 	{
 		cout << "There's no prime number before 1" << endl;
 		exit(1);
 	}
 
-	for (int i = number;i > number-10;i--)
+	int prevPrime = number - 1;
+
+	while (true)
 	{
-		for (int j = 2; j < i - 1;j++)
+		bool isPrime = true;
+		for (int i = 2; i <= prevPrime / 2; ++i)
 		{
-			if (i % j == 0)
+			if (prevPrime % i == 0)
 			{
-				lastPrime = i;
+				isPrime = false;
 				break;
 			}
 		}
+		if (isPrime)
+			break;
+		--prevPrime;
 	}
 
-	return PrimeNumber(lastPrime);
+	number = prevPrime;
+	return PrimeNumber(prevPrime);
 }
 
-/*PrimeNumber PrimeNumber::operator++(int filter)
+PrimeNumber PrimeNumber::operator++(int filter)
 {
-	int nextPrime;
+	int nextPrime = number + 1;
+	bool isPrime = false;
 
-	for (int i = number; i < number + 10; i++)
+	while (!isPrime)
 	{
-		for (int j = 2; j < i - 1; j++)
+		bool result = true;
+		for (int j = 2; j < nextPrime; j++)
 		{
-			if (i % j == 0)
+			if (nextPrime % j == 0)
 			{
-				nextPrime = i;
+				result = false;
 				break;
 			}
 		}
+		if (result)
+		{
+			isPrime = true;
+			break; // Found the next prime, exit the loop
+		}
+		nextPrime++; // Move to the next number
 	}
+
 	number = nextPrime;
 	return PrimeNumber(nextPrime);
-}*/
+}
 
-/*PrimeNumber PrimeNumber::operator--(int filter)
+PrimeNumber PrimeNumber::operator--(int filter)
 {
-	int lastPrime;
-
 	if (number == 1)
 	{
 		cout << "There's no prime number before 1" << endl;
 		exit(1);
 	}
 
-	for (int i = number;i > number - 10;i--)
+	int prevPrime = number - 1;
+
+	while (true)
 	{
-		for (int j = 2; j < i - 1;j++)
+		bool isPrime = true;
+		for (int i = 2; i <= prevPrime / 2; ++i)
 		{
-			if (i % j == 0)
+			if (prevPrime % i == 0)
 			{
-				lastPrime = i;
+				isPrime = false;
 				break;
 			}
 		}
+		if (isPrime)
+			break;
+		--prevPrime;
 	}
 
-	return PrimeNumber(lastPrime);
-}*/
+	number = prevPrime;
+	return PrimeNumber(prevPrime);
+}
