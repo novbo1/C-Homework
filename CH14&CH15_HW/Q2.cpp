@@ -12,7 +12,7 @@ public:
 	UniverstiyStaff& operator= (const UniverstiyStaff& rtSide);
 
 	friend istream& operator>>(istream& inStream, UniverstiyStaff& staffObject);
-	friend ostream& operator>>(ostream& outStream, const UniverstiyStaff& staffObject);
+	friend ostream& operator<<(ostream& outStream, const UniverstiyStaff& staffObject);
 
 private:
 	string name;
