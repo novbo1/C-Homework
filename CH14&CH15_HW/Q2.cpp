@@ -33,7 +33,7 @@ private:
 public:
 	string discipline;
 	string postgraduateCourse;
-}
+};
 
 int main()
 {
