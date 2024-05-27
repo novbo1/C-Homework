@@ -8,6 +8,7 @@ public:
 	UniverstiyStaff();
 	UniverstiyStaff(string theName);
 	UniverstiyStaff(const UniverstiyStaff& theObject);
+
 	string getName() const;
 	UniverstiyStaff& operator= (const UniverstiyStaff& rtSide);
 
@@ -21,6 +22,9 @@ private:
 class Student : public UniverstiyStaff
 {
 public:
+	Student();
+	Student(string universityName, int registrationNumber, UniverstiyStaff proctor);
+	Student();
 private:
 	string universityName;
 	int registrationNumber;
@@ -37,5 +41,5 @@ public:
 
 int main()
 {
-
+	return 0;
 }
