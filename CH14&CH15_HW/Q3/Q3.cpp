@@ -97,17 +97,18 @@ namespace cs_creature {
 } // namespace cs_creature
 
 int main() {
+    using namespace cs_creature;
     srand(static_cast<unsigned int>(time(0)));
 
-    cs_creature::Human h1;
-    cs_creature::Elf e1;
-    cs_creature::Cyberdemon c1;
-    cs_creature::Balrog b1;
+    Human h1;
+    Elf e1;
+    Cyberdemon c1;
+    Balrog b1;
 
-    cs_creature::Human h(20, 30);
-    cs_creature::Elf e(40, 50);
-    cs_creature::Cyberdemon c(60, 70);
-    cs_creature::Balrog b(80, 90);
+    Human h(20, 30);
+    Elf e(40, 50);
+    Cyberdemon c(60, 70);
+    Balrog b(80, 90);
 
     cout << "default human strength/hitpoints: " << h1.getStrength() << "/" << h1.getHitpoints() << endl;
     cout << "default elf strength/hitpoints: " << e1.getStrength() << "/" << e1.getHitpoints() << endl;
