@@ -11,9 +11,12 @@ namespace University
 	class Student : public UniverstiyStaff
 	{
 	public:
-		Student();
-		Student(string universityName, int registrationNumber, UniverstiyStaff proctor);
-		Student();
+		//Constructor
+		Student();  //Default
+		Student(string universityName, int registrationNumber, UniverstiyStaff proctor); 
+		Student(const Student&); //Copy constructor
+
+		void  getInfo();
 	private:
 		string universityName;
 		int registrationNumber;

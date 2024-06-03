@@ -27,7 +27,6 @@ namespace University
 
 		return *this;
 	}
-
 	//cin for object
 	istream& operator>>(istream& inStream, UniverstiyStaff& staffObject)
 	{

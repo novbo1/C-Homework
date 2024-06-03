@@ -11,7 +11,15 @@ namespace University
 	class ScienceStudent : public Student
 	{
 	private:
+		//Constructor
+		ScienceStudent(); //Default
+		ScienceStudent(Student,string,string); 
+		ScienceStudent(const ScienceStudent&); //Copy constructor
+
+		//Get basic information
+		void getInfo();
 	public:
+		Student student;
 		string discipline;
 		string postgraduateCourse;
 	};
