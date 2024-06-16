@@ -158,7 +158,7 @@ int main()
 
 	//test functions
 	battleArena(h1, e1);
-	//battleArena(b1, c1);
+	battleArena(b1, c1);
 
 	return 0;
 }
@@ -166,7 +166,7 @@ int main()
 void battleArena(creature& creature1, creature& creature2)
 {
 	int c1hP, c2hP, c1str, c2str;
-	while (creature1.getHitpoints() > 0 && creature2.getHitpoints() > 0 )
+	while (creature1.getHitpoints() > 0 && creature2.getHitpoints() > 0)
 	{
 		c1hP = creature1.getHitpoints();
 		c2hP = creature2.getHitpoints();
@@ -183,18 +183,26 @@ void battleArena(creature& creature1, creature& creature2)
 		c1hP -= c2str;
 		creature1.setHitpoints(c1hP);
 		cout << "Creature1 now has " << c1hP << " hitpoints!" << endl;
+		cout << endl;
 	}
-
-	if (c1hP > c2hP)
+	if (c1hP > 0 || c2hP > 0)
 	{
-		cout << "Creature1 won the battle." << endl;
-	}
-	else if (c1hP < c2hP)
-	{
-		cout << "Creature2 won the battle." << endl;
+		if (c1hP > c2hP)
+		{
+			cout << "Creature1 won the battle.\n" << endl;
+		}
+		else if (c1hP < c2hP)
+		{
+			cout << "Creature2 won the battle.\n" << endl;
+		}
+		else
+		{
+			cout << "Tie.\n" << endl;
+		}
 	}
 	else
 	{
-		cout << "Tie." << endl;
+		cout << "Tie.\n" << endl;
 	}
 }
+	
